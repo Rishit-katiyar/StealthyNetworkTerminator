@@ -1,5 +1,4 @@
 
-
 # Stealthy Network Terminator - Updated Version
 
 This document outlines the updates and enhancements made to the Stealthy Network Terminator (SNT) script, improving its functionality, robustness, and clarity.

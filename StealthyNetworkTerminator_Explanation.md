@@ -1,4 +1,5 @@
-line-by-line explanation:
+
+sline-by-line explanation:
 
 ```plaintext
 1. @echo off
